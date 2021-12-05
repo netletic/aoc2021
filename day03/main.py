@@ -8,17 +8,7 @@ with open("input.txt") as f:
 
 def transpose(input_s: str) -> list[str]:
     lines = input_s if isinstance(input_s, list) else input_s.strip().splitlines()
-    bit_length = len(lines[0])
-
-    result = []
-    for _ in range(bit_length):
-        result.append("")
-
-    for row, line in enumerate(lines):
-        for col, bit_string in enumerate(line):
-            result[col] += bit_string
-
-    return result
+    return list(zip(*lines))
 
 
 def count(input_l: list[str]):
